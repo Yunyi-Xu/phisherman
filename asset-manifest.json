@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/phisherman/static/css/main.00fa97ee.css",
+    "main.js": "/phisherman/static/js/main.d0d09bff.js",
+    "static/media/background.jpg": "/phisherman/static/media/background.bc32722addbaa1c841ae.jpg",
+    "index.html": "/phisherman/index.html",
+    "main.00fa97ee.css.map": "/phisherman/static/css/main.00fa97ee.css.map",
+    "main.d0d09bff.js.map": "/phisherman/static/js/main.d0d09bff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00fa97ee.css",
+    "static/js/main.d0d09bff.js"
+  ]
+}
