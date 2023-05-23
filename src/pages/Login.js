@@ -92,7 +92,7 @@ const Login = () => {
                                 {/* Checkbox */}
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                                    <label className="form-check-label text-white" for="form2Example31"> Remember me </label>
+                                    <label className="form-check-label text-white" htmlFor="form2Example31"> Remember me </label>
                                 </div>
                             </div>
 
