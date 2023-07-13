@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect, useContext } from 'react';
+
 import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
 import bgimg from './background.jpg'
-
+//import Main from 'C:/Users/14387/phisherman/src/main.js'
 const LOGIN_URL = '/account/login';
+
 
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
@@ -15,6 +17,7 @@ const Login = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -22,6 +25,13 @@ const Login = () => {
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd])
+
+    function handleUvic () {
+        window.location.replace('https://www.uvic.ca/cas/login?service=https%3A%2F%2Fwww.uvic.ca%2Ftools%2Findex.php');
+        this.context.router.goBack()
+
+
+        }
 
     const handleSubmit = async (e) => {
 
@@ -43,8 +53,9 @@ const Login = () => {
             setUser('');
             setPwd('');
             setSuccess(true);
-
+//C:\Users\14387\phisherman\my-phaser-app\node_modules\phaser\dist\phaser.min.js
         }
+        
 
 
     }
@@ -52,14 +63,13 @@ const Login = () => {
     return (
         <>
             {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-
-                </section>
+                <h1 className="text-white">Welcome to Phisherman!</h1>
             ) : (
                 <section style={{ backgroundImage: `url(${bgimg})`, backgroundSize: "contain", height: "100vh" }}>
                     <p ref={errRef} className={errMsg ? "errmsg text-danger" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1 className="text-white">Welcome to Phisherman!</h1>
+                    <h2 className="text-white">Log in</h2>
+
                     <form onSubmit={handleSubmit}>
                         {/* Username input */}
                         <div className="form-outline mb-4">
@@ -105,8 +115,8 @@ const Login = () => {
                         {/* Register buttons */}
                         <div className="text-center">
                             <p className="text-white">Not a member? <a className="text-white" href="#!">Register</a></p>
-                            <p className="text-white">or sign up with:</p>
-                            <img src="https://www.uvic.ca/brand/assets/images/graphics/misc/UVic-mark.jpg" alt="uvic logo" />
+                            <p className="text-white" >or sign up with:</p>
+                            <img onClick={handleUvic} src="https://www.uvic.ca/brand/assets/images/graphics/misc/UVic-mark.jpg" alt="uvic logo" />
                         </div>
                     </form>
 
